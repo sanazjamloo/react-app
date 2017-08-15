@@ -10,13 +10,11 @@
   <body>
       <div id='react-container'></div>
       <script type="text/babel">
-          class MyComponent extends React.Component {
-              render() {
+          const MyComponent = () => {
                 return <div>
                   <h1>Hello World</h1>
-                  <p>This is my first React component with ES6!</p>
+                  <p>This is my first React component with Const!</p>
                 </div>
-              }
           }
 
             ReactDOM.render(<MyComponent />,
