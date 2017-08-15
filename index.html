@@ -12,8 +12,15 @@
       <div id='react-container'></div>
       <script type="text/babel">
       var Note = React.createClass({ //creating note component
+          getInitialState(){         //adding the get initial state function to our class
+            return {editing: false}
+          },
           edit () {
-            alert ("Editing Note")
+            // alert ("Editing Note")
+            this.setState({editing: true})
+          },
+          save () {
+            this.setState({editing: false})
           },
           remove () {
             alert("Removing Note")
@@ -23,7 +30,7 @@
             <div className="note">
               <p>{this.props.children}</p>
               <span>
-                  <button onClick={this.edit}>EDIT</button>
+                  <button onClick={this.edit}>EDIT</button> //adding custom events to the note component
                   <button onClick={this.remove}>X</button>
                 </span>
               </div>
