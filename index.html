@@ -5,20 +5,35 @@
     <script src="https://fb.me/react-0.14.3.js"></script>
     <script src="https://fb.me/react-dom-0.14.3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
-    <title>First React App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Building the Note Board</title>
   </head>
   <body>
       <div id='react-container'></div>
       <script type="text/babel">
-          const MyComponent = () => {
-                return <div>
-                  <h1>Hello World</h1>
-                  <p>This is my first React component with Const!</p>
-                </div>
-          }
+      var Note = React.createClass({ //creating note component
+          edit () {
+            alert ("Editing Note")
+          },
+          remove () {
+            alert("Removing Note")
+          },
+        render () {
+          return (
+            <div className="note">
+              <p>{this.props.children}</p>
+              <span>
+                  <button onClick={this.edit}>EDIT</button>
+                  <button onClick={this.remove}>X</button>
+                </span>
+              </div>
+          )
+        }
+      })
+      ReactDOM.render(<Note>Hello World</Note>, document.getElementById('react-container'))
 
-            ReactDOM.render(<MyComponent />,
-              document.getElementById('react-container'))
+
+
 
 
     </script>
