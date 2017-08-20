@@ -55,9 +55,10 @@
         var Board = React.createClass({
             render() {
                 return (<div className='board')>
+                    {this.props.count}
                   </div>)
             }
-        })
+          })
       ReactDOM.render(<Board count={10}/>,
             document.getElementById('react-container'))
     </script>
