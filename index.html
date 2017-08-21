@@ -76,7 +76,7 @@
             },
             render() {
                 return (<div className='board'>
-                    {this.state.notes.map((note, i) => {
+                    {this.state.notes.map((note, i) => { // map method calls the function for each element in an array.
                         return <Note key={i}>{note}</Note>
                     })}
                     </div>)
